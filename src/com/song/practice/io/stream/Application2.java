@@ -1,5 +1,6 @@
-package com.song.practice.io.stream;
+ package com.song.practice.io.stream;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -20,10 +21,19 @@ public class Application2 {
 			try {
 				fr = new FileReader("src/com/song/practice/io/stream/testReader.txt");
 				
-				int value;
-				while((value = fr.read()) != -1) {
-					
-					System.out.print((char)value);
+//				int value;
+//				while((value = fr.read()) != -1) {
+//					
+//					System.out.print((char)value);
+//				}
+				
+				//값을 한번에 불러오는 방법
+				char[] carr = new char[(int) new File("src/com/song/practice/io/stream/testReader.txt").length()];
+				
+				fr.read(carr);
+				
+				for(int i = 0; i < carr.length; i++) {
+					System.out.print(carr[i]);
 				}
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
