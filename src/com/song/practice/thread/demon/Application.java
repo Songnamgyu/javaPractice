@@ -20,5 +20,6 @@ public class Application {
 		System.out.println(JOptionPane.showInputDialog("아무 문자열이나 입력해줘"));
 		
 		System.out.println("메인스레드 종료 ");
+		System.out.println("");
 	}
 }
